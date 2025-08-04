@@ -19,7 +19,7 @@
     {{ header }}
   </div>
   <div class="font-semibold text-xl">
-    {{ creditValue }}
+    {{ creditValue }} ₽
   </div>
 </div>
 </template>
