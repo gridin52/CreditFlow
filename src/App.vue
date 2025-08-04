@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <main class="max-w-[390px] h-screen flex flex-col bg-zinc-950 text-neutral-200">
+  <main class="max-w-[390px] h-screen flex flex-col bg-[hsl(0_0%_8%)] text-neutral-200">
     <div>
       <Header />
     </div>
