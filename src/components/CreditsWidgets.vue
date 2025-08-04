@@ -13,7 +13,7 @@
   })
 </script>
 <template>
-<div class="flex flex-col p-3 rounded-2xl bg-sky-900/50">
+<div class="flex flex-col p-3 rounded-lg bg-sky-900/50">
   <!-- Title -->
   <div class="text-xs text-neutral-400">
     {{ header }}
