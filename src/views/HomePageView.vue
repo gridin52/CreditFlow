@@ -4,12 +4,10 @@
   import { useCreditsStore } from '@/stores/credits';
 
   const creditsStore = useCreditsStore()
-
 </script>
 
 <template>
-  <div class="h-full flex flex-col justify-between p-2">
-    <!-- Widgets -->
+  <div class="h-full flex flex-col p-2">
     <div class="grid grid-cols-2 gap-4 justify-between">
       <CreditsWidgets 
         header="Общий месячный платеж"
@@ -21,13 +19,17 @@
         creditValue="6 796 000"
       />
     </div>
-    <!-- Credits list -->
-    <div class="overflow-x-auto h-full mt-4">
-      <div v-for="credit in creditsStore.credits">
+    <div class="flex-1 overflow-y-auto mt-4 min-h-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div v-for="credit in creditsStore.credits" :key="credit.id">
         <CreditItem 
           :credit-data="credit"
         />
       </div>
+    </div>
+    <div class="mt-4">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full" @click="creditsStore.deleteCredit()">
+        Удалить
+      </button>
     </div>
   </div>
 </template>
