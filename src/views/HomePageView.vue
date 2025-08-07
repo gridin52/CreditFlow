@@ -11,12 +11,12 @@
     <div class="grid grid-cols-2 gap-4 justify-between">
       <CreditsWidgets 
         header="Общий месячный платеж"
-        creditValue="158 000"
+        :creditValue="creditsStore.totalMonthlyPayment"
         bg="bg-[hsl(120_100%_25%)]"
       />
       <CreditsWidgets 
         header="Остаток долга"
-        creditValue="6 796 000"
+        :creditValue="creditsStore.totalCreditsSum"
       />
     </div>
     <div class="flex-1 overflow-y-auto mt-4 min-h-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">

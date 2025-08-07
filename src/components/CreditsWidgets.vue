@@ -1,5 +1,6 @@
 <script setup>
-  import { defineProps } from 'vue';
+  import { computed, defineProps } from 'vue';
+  import { formattedAmount } from '@/utils/formatters'
 
   const props = defineProps({
     header: {
@@ -7,7 +8,7 @@
       required: true
     },
     creditValue: {
-      type: String,
+      type: Number,
       required: true
     },
     bg: {
@@ -26,7 +27,7 @@
     {{ header }}
   </div>
   <div class="font-semibold text-xl">
-    {{ creditValue }} ₽
+    {{ formattedAmount(props.creditValue) }} ₽
   </div>
 </div>
 </template>

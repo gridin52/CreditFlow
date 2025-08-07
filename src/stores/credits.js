@@ -63,5 +63,15 @@ export const useCreditsStore = defineStore('credits', {
         credits: initialCreditsData,
         isLoading: false,
         error: null
-    })
+    }),
+
+    getters: {
+      totalCreditsSum() {
+        return initialCreditsData.reduce((sum, credit) => sum + credit.totalPaymentAmount, 0);
+      },
+
+      totalMonthlyPayment() {
+        return initialCreditsData.reduce((sum, credit) => sum + credit.monthlyPayment,  0)
+      }
+    }
 })
